@@ -9,9 +9,11 @@
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "ci": "npm run lint && npm run test && npm run build",
     "mcp": "tsx src/index.ts"
   },
   "keywords": [
