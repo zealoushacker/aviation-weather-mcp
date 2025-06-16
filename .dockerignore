@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+src
+*.ts
+tsconfig.json
+.env
+.env.*
+README.md
+LICENSE
+test-*.js
+examples
+coverage
+.nyc_output
+*.log
