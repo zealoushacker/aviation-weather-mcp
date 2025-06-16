@@ -178,9 +178,32 @@ npm run build
 # Run tests
 npm test
 
+# Run tests with coverage
+npm run test:coverage
+
 # Lint code
 npm run lint
+
+# Fix linting issues automatically
+npm run lint:fix
+
+# Run full CI pipeline (lint + test + build)
+npm run ci
 ```
+
+## Continuous Integration
+
+This project uses GitHub Actions for automated testing and deployment:
+
+- **CI Pipeline**: Runs on every push and pull request
+  - Tests against Node.js 18.x, 20.x, and 22.x
+  - Runs linting, tests, and build verification
+  - Uploads code coverage reports
+
+- **Release Pipeline**: Runs on version tags
+  - Creates GitHub releases
+  - Builds and validates the project
+  - Ready for NPM publishing (when uncommented)
 
 ## API Rate Limits
 
@@ -189,36 +212,9 @@ The aviationweather.gov API does not require authentication, but please be respe
 - Requests timeout after 10 seconds
 - Consider caching responses when appropriate
 
-## Remote Deployment
+## Deployment
 
-The server can be deployed to any cloud platform that supports Node.js:
-
-### Deploy to Render
-
-1. Push your code to GitHub
-2. Connect your GitHub repo to Render
-3. Set build command: `npm install && npm run build`
-4. Set start command: `npm start`
-5. Add environment variables if needed
-
-### Deploy to Railway
-
-1. Connect your GitHub repo
-2. Railway will auto-detect Node.js
-3. Set PORT environment variable (Railway provides this)
-
-### Deploy to Heroku
-
-1. Create a `Procfile` with: `web: node dist/index.js`
-2. Deploy using Heroku CLI or GitHub integration
-
-### Security Considerations
-
-When deploying remotely:
-- Use HTTPS in production
-- Consider adding authentication if needed
-- Set appropriate CORS headers
-- Monitor usage and set rate limits
+Deployment documentation is TBD. The server is designed to run on any Node.js hosting platform that supports ES modules.
 
 ## Environment Variables
 
